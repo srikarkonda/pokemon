@@ -1,0 +1,19 @@
+
+<div>
+
+<div>
+    <h2 mat-dialog-title>Do you want to select {{data.name}}</h2>
+</div>
+<div>
+    <img mat-card-image src={{data.url}}
+    style="height: 100px; padding: 10px; width: 100px;" alt="Photo of a Pokemon">
+</div>
+<div>
+    <mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">No Thanks</button>
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+      </mat-dialog-actions>
+</div>
+
+
+</div>

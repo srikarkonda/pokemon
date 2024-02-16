@@ -1,0 +1,18 @@
+<div style="
+display: flex;
+flex-wrap: wrap;
+" *ngIf="!selectedPokemon">
+    <div style="padding: 10px;" *ngFor="let pokemon of commonService.pokemons | async ">
+        <app-pokemon [pokemon]="pokemon" (selected)="openDialog($event)" />
+    </div>
+</div>
+<div *ngIf="selectedPokemon" style="
+display: flex;
+height: 100%;
+align-items: center;
+justify-content: center;
+">
+    <div style="padding: 10px;">
+        <app-pokemon [pokemon]="selectedPokemon" />
+    </div>
+</div>

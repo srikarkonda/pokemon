@@ -1,0 +1,21 @@
+<mat-card class="card" *ngIf="pokemon">
+    <div [class.mat-elevation-z2]="!isActive" [class.mat-elevation-z8]="isActive" (mouseenter)="isActive = !isActive"
+        (mouseleave)="isActive = !isActive" (click)="selected.emit(pokemon)">
+        <div>
+            <div style="background: #edecec">
+                <img mat-card-image src={{pokemon.sprites.front_default}}
+                    style="height: 250px; padding: 10px; width: 280px;" alt="Photo of a Pokemon">
+            </div>
+
+            <mat-card-content>
+                <mat-card-title>{{pokemon.name}}</mat-card-title>
+                <div>
+                    <p>#{{pokemon.id}}</p>
+                    <p> weight : {{pokemon.weight}}</p>
+                    <p> Height : {{pokemon.height}}</p>
+
+                </div>
+            </mat-card-content>
+        </div>
+    </div>
+</mat-card>
